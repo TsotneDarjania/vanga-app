@@ -1,0 +1,142 @@
+:root {
+    --background-color-1 : rgb(35, 22, 70);
+    --text-color-1 : rgb(178, 189, 253);
+}
+
+
+.intro-preload{
+    cursor: pointer;
+}
+
+.intro{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color-1);
+}
+
+.intro-preload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+.intro-txt{
+    color: var(--text-color-1);
+    text-align: center;
+    padding: 0 20px;
+    opacity: 0;
+    margin-top: 30vw;
+    animation-delay: 1s;
+}
+
+.intro-txt-2{
+    animation-delay: 4s;
+    margin-top: 10px;
+    color: rgb(136, 97, 227);
+}
+
+.intro-txt-3{
+    animation-delay: 7s;
+    margin-top: 10px;
+}
+
+.intro-bottom-txt{
+    position: absolute;
+    text-align: center;
+    bottom: 120px;
+    color: rgb(250, 243, 237);
+    font-size: 1.3rem;
+}
+
+.text-show-animation{
+    animation-name: text-show-anim;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function:ease-in-out;
+}
+
+.text-show-animation-2{
+    animation-name: text-show-anim-2;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function:ease-in-out;
+}
+
+.text-show-animation-3{
+    animation-name: text-show-anim-3;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function:ease-in-out;
+}
+
+@keyframes text-show-anim {
+    0%{
+        font-size: 0.1rem;
+        filter: blur(2rem);
+        opacity: 0;
+    }
+    5%{
+        filter: blur(1.5rem);
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+        font-size:2rem;
+        filter: blur(0rem);
+    }
+}
+
+@keyframes text-show-anim-2 {
+    0%{
+        font-size: 0.1rem;
+        filter: blur(2rem);
+        opacity: 0;
+    }
+    5%{
+        filter: blur(1.5rem);
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+        font-size: 2.5rem;
+        filter: blur(0rem);
+    }
+}
+
+@keyframes text-show-anim-3 {
+    0%{
+        font-size: 0.1rem;
+        filter: blur(2rem);
+        opacity: 0;
+    }
+    5%{
+        filter: blur(1.5rem);
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+        font-size: 2rem;
+        filter: blur(0rem);
+    }
+}
+
+.flashing-animation{
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: flashing-anim;
+}
+
+@keyframes flashing-anim {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
