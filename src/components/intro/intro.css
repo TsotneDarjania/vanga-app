@@ -1,6 +1,6 @@
 :root {
-    --background-color-1 : rgb(35, 22, 70);
-    --text-color-1 : rgb(178, 189, 253);
+    --background-color-1 : rgb(0, 0, 0);
+    --text-color-1 : rgb(197, 189, 117);
 }
 
 
@@ -12,6 +12,50 @@
     width: 100vw;
     height: 100vh;
     background-color: var(--background-color-1);
+}
+
+.intro-bck-image{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: url("../../img/introBackground.jpg") ;
+    background-repeat: no-repeat;
+    background-size: 200vw 200vh;
+    background-position: 0px 0px;
+    filter:opacity(30%);
+    animation-name: intro-bck-image-anim;
+    animation-duration: 200s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes intro-bck-image-anim {
+    0%{
+        background-size: 200vw 200vh;
+        background-position: 0px 0px;
+    }
+    20%{
+        background-size: 180vw 190vh;
+        background-position: -20vw -10vh;
+    }
+    40%{
+        background-size: 190vw 170vh;
+        background-position: -10vw -40vh;
+    }
+    60%{
+        background-size: 210vw 200vh;
+        background-position: -30vw 0vh;
+    }
+    80%{
+        background-size: 240vw 220vh;
+        background-position: -40vw -20vh;
+    }
+    100%{
+        background-size: 200vw 200vh;
+        background-position: 0px 0px;
+    }
+    
 }
 
 .intro-preload{
@@ -27,26 +71,27 @@
     text-align: center;
     padding: 0 20px;
     opacity: 0;
-    margin-top: 30vw;
+    margin-top: 10%;
     animation-delay: 1s;
+    text-shadow: 0 8px 2px rgb(19, 13, 1);
 }
 
 .intro-txt-2{
     animation-delay: 4s;
-    margin-top: 10px;
-    color: rgb(136, 97, 227);
+    margin-top: 50px;
+    color: rgb(177, 71, 9);
 }
 
 .intro-txt-3{
     animation-delay: 7s;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 .intro-bottom-txt{
     position: absolute;
     text-align: center;
     bottom: 120px;
-    color: rgb(250, 243, 237);
+    color: rgb(177, 71, 9);
     font-size: 1.3rem;
 }
 
@@ -139,4 +184,108 @@
     100%{
         opacity: 0;
     }
+}
+
+
+
+@media screen and (max-width:800px) {
+
+    @keyframes text-show-anim {
+        0%{
+            font-size: 0.1rem;
+            filter: blur(2rem);
+            opacity: 0;
+        }
+        5%{
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+        100%{
+            opacity: 1;
+            font-size:1.7rem;
+            filter: blur(0rem);
+        }
+    }
+    
+    @keyframes text-show-anim-2 {
+        0%{
+            font-size: 0.1rem;
+            filter: blur(2rem);
+            opacity: 0;
+        }
+        5%{
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+        100%{
+            opacity: 1;
+            font-size: 2rem;
+            filter: blur(0rem);
+        }
+    }
+    
+    @keyframes text-show-anim-3 {
+        0%{
+            font-size: 0.1rem;
+            filter: blur(2rem);
+            opacity: 0;
+        }
+        5%{
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+        100%{
+            opacity: 1;
+            font-size: 1.7rem;
+            filter: blur(0rem);
+        }
+    }
+    
+}
+
+
+
+
+
+@media screen and (max-width:600px) {
+
+    @keyframes text-show-anim {
+        0%{
+            font-size: 2rem;
+            filter: blur(2rem);
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+            font-size:2rem;
+            filter: blur(0rem);
+        }
+    }
+    
+    @keyframes text-show-anim-2 {
+        0%{
+            font-size: 3rem;
+            filter: blur(2rem);
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+            font-size:3rem;
+            filter: blur(0rem);
+        }
+    }
+    
+    @keyframes text-show-anim-3 {
+        0%{
+            font-size: 2rem;
+            filter: blur(2rem);
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+            font-size:2rem;
+            filter: blur(0rem);
+        }
+    }
+    
 }
