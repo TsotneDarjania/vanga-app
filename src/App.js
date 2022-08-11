@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Intro from './components/intro/Intro';
 
@@ -7,11 +6,8 @@ import Quiz from './components/quiz/Quiz';
 
 function App() {
 
-  let state = {
-    startIsPossible : false
-  }
 
-  const [scenName, setScenName] = useState("quiz");
+  const [scenName, setScenName] = useState("intro");
 
 
 
