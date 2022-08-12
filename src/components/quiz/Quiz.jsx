@@ -10,40 +10,68 @@ const Quiz = () => {
 
   const vangaAnimationRef = useRef();
   const [quizState, setQuizState] = useState(0);
+  const [quizClassName, setQuizClassName] = useState(null)
 
   useEffect( () => {
     if(quizState === 0){
       setQuizState(quizState + 1)
     }
-    vangaAnimationRef?.current.addEventListener("animationend", () => {
-      if(quizState != 4){
-        setQuizState(quizState + 1)
-      }
-    })
+    if(quizState == 5){
+      setQuizClassName("quiz-2")
+    }
+    
+    if(vangaAnimationRef.current != undefined){
+
+      vangaAnimationRef?.current.addEventListener("animationend", () => {
+        if(quizState != 4){
+          setQuizState(quizState + 1)
+       }
+      })
+
+    }
+
   })
 
 
   return (
-    <div className='quiz'>
+    <div className={'quiz ' + quizClassName}>
 
       {
       quizState === 0 ?
-      <img ref={vangaAnimationRef} className='vanga-img' src={Vanga} alt="" />
+      <div>
+        <img className='vanga-img' src={Vanga} alt="" />
+      </div>
       :
       quizState === 1 ?
-      <img ref={vangaAnimationRef} className='vanga-img vanga-img-anim-1' src={Vanga} alt="" />
+      <div>
+        <img className='vanga-img vanga-img-anim-1' src={Vanga} alt="" />
+      </div>
       :
       quizState === 2 ?
-      <img ref={vangaAnimationRef} className='vanga-img vanga-img-anim-2' src={Vanga} alt="" />
+      <div>
+        <img className='vanga-img vanga-img-anim-2' src={Vanga} alt="" />
+      </div>
       :
       quizState === 3 ?
-      <img ref={vangaAnimationRef} className='vanga-img vanga-img-anim-3' src={Vanga} alt="" />
+      <div>
+        <img className='vanga-img vanga-img-anim-3' src={Vanga} alt="" />
+      </div>
       :
       quizState === 4 ?
-      <img ref={vangaAnimationRef} className='vanga-img vanga-img-anim-4' src={Vanga} alt="" />
+      <div>
+        <img className='vanga-img vanga-img-anim-4' src={Vanga} alt="" />
+      </div>
       :
-      <img ref={vangaAnimationRef} className='vanga-img vanga-img-anim-4' src={Vanga} alt="" />
-
+      quizState === 5 ?
+      <div>
+        <img className='vanga-img vanga-img-anim-5' src={Vanga} alt="" />
+        <div className='hr'> </div>
+      </div>
+      :
+      <div>
+        <img className='vanga-img vanga-img-anim-5' src={Vanga} alt="" />
+      </div>
+      
       }
 
 
@@ -76,9 +104,10 @@ const Quiz = () => {
             <p className='quizz-intro-txt'> </p>
           }
           { quizState === 4 ?   
-           <div>
+           <div className='last-quiz-intro-div'>
               <p className='quizz-intro-txt'> <span ref={vangaAnimationRef} className='light'> </span> be careful and follow my instructions </p>
               <img onClick={() => {setQuizState(quizState - 1)}} className='arrow previous-arrow' src={Arrow} alt="arrow" />
+              <button className='quizz-intro-next-btn' onClick={() => {setQuizState(quizState + 1)}}> ok, please continue </button>
             </div>  
             :
             <p className='quizz-intro-txt'> </p>
