@@ -7,22 +7,18 @@ import Quiz from './components/quiz/Quiz';
 function App() {
 
 
-  const [scenName, setScenName] = useState("intro");
-
-
+  const [scenName, setScenName] = useState("quiz");
 
   return (
     <div className="App">
 
-      {scenName === "intro" ?
+      {scenName === "intro" &&
       <Intro scenName={setScenName} /> 
-      :
-      null}
+      }
 
-      {scenName === "quiz" ?
+      {scenName === "quiz" &&
       <Quiz />
-      :
-      null}
+      }
 
     </div>
   );

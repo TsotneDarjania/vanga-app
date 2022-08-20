@@ -1,0 +1,89 @@
+/* Calendar */
+#calendar{
+    width: 400px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 3px;
+}
+
+.calendar-number{
+    border: 2px solid rgb(38, 0, 84);
+    display: flex;
+    cursor: pointer;
+    color: rgb(184, 171, 252);
+    font-size: 1.1rem;
+    background-color: rgb(80, 35, 153);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.calendar-number p{
+    margin-left: 2px;
+}
+.calendar-number:hover{
+    transition: 0.3s;
+    background-color: rgb(255, 254, 254);
+    color: rgb(255, 254, 254);
+    font-size: 0;
+}
+
+.month-container{
+    grid-column: 1/8;
+    border: 2px solid rgb(22, 0, 34);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.month-btn{
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.month-text{
+    font-size: 2rem;
+}
+
+.month-next-btn{
+
+}
+
+.capricorn {
+    background-image: url("../../../img/zodiacIcons/capricorn.png");
+}
+.aquarius {
+    background-image: url("../../../img/zodiacIcons/aquarius.png");
+}
+.pisces {
+    background-image: url("../../../img/zodiacIcons/pisces.png");
+}
+.aries {
+    background-image: url("../../../img/zodiacIcons/aries.png");
+}
+.taurus {
+    background-image: url("../../../img/zodiacIcons/taurus.png");
+}
+.gemini {
+    background-image: url("../../../img/zodiacIcons/gemini.png");
+}
+.cancer {
+    background-image: url("../../../img/zodiacIcons/cancer.png");
+}
+.leo {
+    background-image: url("../../../img/zodiacIcons/leo.png");
+}
+.virgo {
+    background-image: url("../../../img/zodiacIcons/virgo.png");
+}
+.libra {
+    background-image: url("../../../img/zodiacIcons/libra.png");
+}
+.scorpio {
+    background-image: url("../../../img/zodiacIcons/scorpio.png");
+}
+.sagittarius {
+    background-image: url("../../../img/zodiacIcons/sagittarius.png");
+}

@@ -5,12 +5,15 @@ import Arrow from '../../img/arrow.png'
 import {useRef,useEffect, useState } from 'react';
 
 import "./quiz.css";
+import QuizQuestions from './quizQuestions/QuizQuestions';
+
 
 const Quiz = () => {
 
   const vangaAnimationRef = useRef();
   const [quizState, setQuizState] = useState(0);
   const [quizClassName, setQuizClassName] = useState(null)
+
 
   useEffect( () => {
     if(quizState === 0){
@@ -70,6 +73,7 @@ const Quiz = () => {
       :
       <div>
         <img className='vanga-img vanga-img-anim-5' src={Vanga} alt="" />
+        <div className='hr'> </div>
       </div>
       
       }
@@ -111,6 +115,12 @@ const Quiz = () => {
             </div>  
             :
             <p className='quizz-intro-txt'> </p>
+          }
+          {
+            quizState === 5 ? 
+            <QuizQuestions/>
+            :
+            null
           }
           
         </div>
