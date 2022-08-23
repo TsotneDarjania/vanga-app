@@ -3,9 +3,35 @@ import { useState } from 'react'
 import "./calendar.css"
 
 
+
+class Month {
+    constructor(days_number){
+        this.days_number = days_number;
+        this.zodiacDays = [];
+        this.init();
+    }
+
+    init(){
+        //create empty array
+        for (let i = 0; i < this.days_number+1; i++) {
+            this.zodiacDays.push('none');
+        }
+    }
+
+    setZodiacDate({zodiacName,from, to}){
+        for (let i = 0; i < this.zodiacDays.length; i++) {
+            if(i >= from && i < to) {
+                this.zodiacDays[i-1] = zodiacName;     
+            }  
+        }
+    }
+}
+
 const Calendar = () => {
 
     const [monthIndicator, setMonthIndicator] = useState(0)
+
+    
 
     const monthsNames = {
         0 : "January",
@@ -22,25 +48,8 @@ const Calendar = () => {
         11 : "December"
     }
 
-    function changeMonth(symbol) {
-        if(symbol === "+"){
-            if(monthIndicator < 11){
-                setMonthIndicator(monthIndicator + 1)
-                return;
-            }
-            if(monthIndicator === 11){
-                setMonthIndicator(0);
-            }
-        }
-        if(symbol === "-"){
-            if(monthIndicator > 0){
-                setMonthIndicator(monthIndicator - 1)
-                return;
-            }
-            if(monthIndicator === 0){
-                setMonthIndicator(11)
-            }        
-        }
+    function changeMonth(symbol) {  
+        setMonthIndicator((monthIndicator + symbol + 12) % 12 );
     }
 
     const getMonthDaysContent = month => {
@@ -57,29 +66,6 @@ const Calendar = () => {
         }                  
         return content;
     };
-
-    class Month {
-        constructor(days_number){
-            this.days_number = days_number;
-            this.zodiacDays = [];
-            this.init();
-        }
-
-        init(){
-            //create empty array
-            for (let i = 0; i < this.days_number+1; i++) {
-                this.zodiacDays.push('none');
-            }
-        }
-
-        setZodiacDate({zodiacName,from, to}){
-            for (let i = 0; i < this.zodiacDays.length; i++) {
-                if(i >= from && i < to) {
-                    this.zodiacDays[i-1] = zodiacName;     
-                }  
-            }
-        }
-    }
 
     let january = new Month(31)
     january.setZodiacDate({zodiacName : "capricorn",from : 1, to : 20})
@@ -148,9 +134,9 @@ const Calendar = () => {
   return (
     <div id="calendar">  
         <div className="month-container"> 
-            <div className="month-btn" onClick={ () => changeMonth("-")}> &#60; </div>
+            <div className="month-btn" onClick={ () => changeMonth(-1)}> &#60; </div>
             <p className="month-text"> {monthsNames[monthIndicator]} </p>
-            <div className="month-btn" onClick={ () => changeMonth("+")}>  &#62; </div>
+            <div className="month-btn" onClick={ () => changeMonth(+1)}>  &#62; </div>
             {
                  
             }

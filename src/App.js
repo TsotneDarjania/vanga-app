@@ -6,7 +6,6 @@ import Quiz from './components/quiz/Quiz';
 
 function App() {
 
-
   const [scenName, setScenName] = useState("quiz");
 
   return (
