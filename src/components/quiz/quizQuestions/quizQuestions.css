@@ -2,10 +2,10 @@
     animation-delay: 1.8s;
     animation-fill-mode: forwards;
     animation-duration: 1.5s;
-    animation-name: quiz-questions-anim;
+    animation-name: opacity-anim;
     opacity: 0;
 }
-@keyframes quiz-questions-anim {
+@keyframes opacity-anim {
     from{
         opacity: 0;
     }
@@ -25,5 +25,23 @@
     gap: 7px;
 }
 
+.question-next-btn{
+    opacity: 0;
+    width: 200px;
+    height: 55px;
+    font-size: 1.5rem;
+    color: rgb(217, 193, 253);
+    background-color: rgb(141, 86, 231);
+    margin-top: 20px;
+    cursor: pointer;
+    border:none;
+    transition: 0.4s;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+    animation-name: opacity-anim;
+    opacity: 0;
+}
 
-
+.question-next-btn:hover{
+    background-color: rgb(54, 22, 105);
+}

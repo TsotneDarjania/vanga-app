@@ -30,9 +30,7 @@ const Quiz = () => {
           setQuizState(quizState + 1)
        }
       })
-
     }
-
   })
 
 
@@ -118,7 +116,7 @@ const Quiz = () => {
           }
           {
             quizState === 5 ? 
-            <QuizQuestions/>
+            <QuizQuestions />
             :
             null
           }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react';
 import { useState } from 'react'
 import "./calendar.css"
 
@@ -27,11 +28,15 @@ class Month {
     }
 }
 
-const Calendar = () => {
+let selectedDay = undefined;
+
+
+
+const Calendar = (props) => {
 
     const [monthIndicator, setMonthIndicator] = useState(0)
 
-    
+  
 
     const monthsNames = {
         0 : "January",
@@ -52,18 +57,44 @@ const Calendar = () => {
         setMonthIndicator((monthIndicator + symbol + 12) % 12 );
     }
 
+    let selectDay = item => { 
+
+        if(selectedDay != undefined){
+            selectedDay.classList.remove('number-selected')
+        }
+        
+        selectedDay = item.target;
+        selectedDay.classList.add('number-selected')
+
+        props.isSelected(true);
+        props.day(selectedDay.id);
+    };
+
+    
+
     const getMonthDaysContent = month => {
      
         let content = [];
 
         for (let i = 0; i < month.days_number; i++) {
             if(month.zodiacDays[i] != "none"){
-                content.push(<div key={i} id={"day_"+i} className={"calendar-number "+month.zodiacDays[i]}> {<p> {i+1} </p>} </div>);
+                if(selectedDay != undefined){
+                    if(month.zodiacDays[i] + "_day_"+i === selectedDay.id ){
+                        content.push(<div key={month.zodiacDays[i] + "_"+i} id={month.zodiacDays[i] + "_day_"+i} onClick={selectDay} className={"calendar-number "+month.zodiacDays[i] + " number-selected"}> {<p> {i+1} </p>} </div>);
+                    }
+                    else{
+                        content.push(<div key={month.zodiacDays[i] + "_"+i} id={month.zodiacDays[i] + "_day_"+i} onClick={selectDay} className={"calendar-number "+month.zodiacDays[i]}> {<p> {i+1} </p>} </div>);
+                    }
+                }    
+                else{
+                    content.push(<div key={month.zodiacDays[i] + "_"+i} id={month.zodiacDays[i] + "_day_"+i} onClick={selectDay} className={"calendar-number "+month.zodiacDays[i]}> {<p> {i+1} </p>} </div>);
+                }
             }
             else {
                 content.push(<div key={i} id={"day_"+i} className="calendar-number"> {<p> {i+1} </p>} </div>);
             }   
-        }                  
+        }     
+
         return content;
     };
 
@@ -128,7 +159,6 @@ const Calendar = () => {
     let months = [january,february,march,april,may,june,july,august,september,
     october,november,december]
 
-    
 
 
   return (
@@ -142,7 +172,7 @@ const Calendar = () => {
             }
         </div>
         {
-            getMonthDaysContent(months[monthIndicator])   
+            getMonthDaysContent(months[monthIndicator])      
         }    
     </div>
   )

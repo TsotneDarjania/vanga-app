@@ -87,3 +87,8 @@
 .sagittarius {
     background-image: url("../../../img/zodiacIcons/sagittarius.png");
 }
+
+.number-selected{
+    background-color: rgba(203, 158, 255, 0.963);
+    color: white;
+}

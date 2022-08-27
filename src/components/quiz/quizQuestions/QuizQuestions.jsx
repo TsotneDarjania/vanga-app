@@ -8,6 +8,10 @@ import React from 'react'
 const QuizQuestions = () => {
 
 const [questionIndex, setQuestionIndex] = useState(1)
+const [day, setDay] = useState(undefined)
+
+const [birthDayIsSelected, setBirthDayIsSelected] = useState(false)
+
 
 
 
@@ -17,11 +21,16 @@ const [questionIndex, setQuestionIndex] = useState(1)
         { questionIndex === 1 ?
         <div className="question-raw">
             <p className="question-txt"> When is the month and number of your birthday ? </p>
-            <Calendar/>
+            <Calendar day={setDay} isSelected={setBirthDayIsSelected}/>
+            {
+                birthDayIsSelected ? <button className="question-next-btn"> Continue </button> : null
+            }
         </div>
          :
          null
         }
+
+       
 
 
     </div>
