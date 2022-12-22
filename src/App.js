@@ -11,13 +11,9 @@ function App() {
   return (
     <div className="App">
 
-      {scenName === "intro" &&
-      <Intro scenName={setScenName} /> 
-      }
+      {scenName === "intro" && <Intro scenName={setScenName} /> }
 
-      {scenName === "quiz" &&
-      <Quiz />
-      }
+      {scenName === "quiz" && <Quiz /> }
 
     </div>
   );

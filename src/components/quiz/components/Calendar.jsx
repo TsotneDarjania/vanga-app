@@ -57,17 +57,19 @@ const Calendar = (props) => {
         setMonthIndicator((monthIndicator + symbol + 12) % 12 );
     }
 
-    let selectDay = item => { 
+    function selectDay(day){ 
 
         if(selectedDay != undefined){
-            selectedDay.classList.remove('number-selected')
+            document.getElementById(day).classList.remove('number-selected')
         }
         
-        selectedDay = item.target;
-        selectedDay.classList.add('number-selected')
+        selectedDay = day;
+        
+        document.getElementById(day).classList.add('number-selected')
 
         props.isSelected(true);
-        props.day(selectedDay.id);
+        props.day(selectedDay);
+
     };
 
     
@@ -79,15 +81,15 @@ const Calendar = (props) => {
         for (let i = 0; i < month.days_number; i++) {
             if(month.zodiacDays[i] != "none"){
                 if(selectedDay != undefined){
-                    if(month.zodiacDays[i] + "_day_"+i === selectedDay.id ){
-                        content.push(<div key={month.zodiacDays[i] + "_"+i} id={month.zodiacDays[i] + "_day_"+i} onClick={selectDay} className={"calendar-number "+month.zodiacDays[i] + " number-selected"}> {<p> {i+1} </p>} </div>);
+                    if(month.zodiacDays[i] + "_day_"+i === selectedDay ){
+                        content.push(<div key={month.zodiacDays[i] + "_"+i} id={month.zodiacDays[i] + "_day_"+i} onClick={ () => {selectDay(month.zodiacDays[i] + "_day_"+i)}} className={"calendar-number "+month.zodiacDays[i] + " number-selected"}> {<p> {i+1} </p>} </div>);
                     }
                     else{
-                        content.push(<div key={month.zodiacDays[i] + "_"+i} id={month.zodiacDays[i] + "_day_"+i} onClick={selectDay} className={"calendar-number "+month.zodiacDays[i]}> {<p> {i+1} </p>} </div>);
+                        content.push(<div key={month.zodiacDays[i] + "_"+i} id={month.zodiacDays[i] + "_day_"+i} onClick={() => {selectDay(month.zodiacDays[i] + "_day_"+i)}} className={"calendar-number "+month.zodiacDays[i]}> {<p> {i+1} </p>} </div>);
                     }
                 }    
                 else{
-                    content.push(<div key={month.zodiacDays[i] + "_"+i} id={month.zodiacDays[i] + "_day_"+i} onClick={selectDay} className={"calendar-number "+month.zodiacDays[i]}> {<p> {i+1} </p>} </div>);
+                    content.push(<div key={month.zodiacDays[i] + "_"+i} id={month.zodiacDays[i] + "_day_"+i} onClick={() => {selectDay(month.zodiacDays[i] + "_day_"+i)}} className={"calendar-number "+month.zodiacDays[i]}> {<p> {i+1} </p>} </div>);
                 }
             }
             else {
@@ -158,7 +160,6 @@ const Calendar = (props) => {
 
     let months = [january,february,march,april,may,june,july,august,september,
     october,november,december]
-
 
 
   return (

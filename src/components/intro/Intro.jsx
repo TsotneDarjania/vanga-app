@@ -13,6 +13,7 @@ const Intro = (props) => {
 
 
 
+
   useEffect(() => {
     lastTextRef.current.addEventListener('animationend', () => {  
       setStartIsPossible(true)

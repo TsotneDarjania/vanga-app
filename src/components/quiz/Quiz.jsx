@@ -6,76 +6,44 @@ import {useRef,useEffect, useState } from 'react';
 
 import "./quiz.css";
 import QuizQuestions from './quizQuestions/QuizQuestions';
+import Answers from './answers/Answers';
 
 
 const Quiz = () => {
 
   const vangaAnimationRef = useRef();
+  const [answers, setAnswers] = useState([])
+
   const [quizState, setQuizState] = useState(0);
   const [quizClassName, setQuizClassName] = useState(null)
+  const [vangaImageClassName, setVangaImageClassName] = useState("vanga-image")
+
 
 
   useEffect( () => {
     if(quizState === 0){
       setQuizState(quizState + 1)
     }
-    if(quizState == 5){
+    if(quizState === 5){
       setQuizClassName("quiz-2")
     }
     
+    
     if(vangaAnimationRef.current != undefined){
-
       vangaAnimationRef?.current.addEventListener("animationend", () => {
-        if(quizState != 4){
+        if(quizState !== 4){
           setQuizState(quizState + 1)
        }
       })
     }
+
+    setVangaImageClassName("vanga-img vanga-img-anim-"+quizState);
   })
 
 
   return (
     <div className={'quiz ' + quizClassName}>
-
-      {
-      quizState === 0 ?
-      <div>
-        <img className='vanga-img' src={Vanga} alt="" />
-      </div>
-      :
-      quizState === 1 ?
-      <div>
-        <img className='vanga-img vanga-img-anim-1' src={Vanga} alt="" />
-      </div>
-      :
-      quizState === 2 ?
-      <div>
-        <img className='vanga-img vanga-img-anim-2' src={Vanga} alt="" />
-      </div>
-      :
-      quizState === 3 ?
-      <div>
-        <img className='vanga-img vanga-img-anim-3' src={Vanga} alt="" />
-      </div>
-      :
-      quizState === 4 ?
-      <div>
-        <img className='vanga-img vanga-img-anim-4' src={Vanga} alt="" />
-      </div>
-      :
-      quizState === 5 ?
-      <div>
-        <img className='vanga-img vanga-img-anim-5' src={Vanga} alt="" />
-        <div className='hr'> </div>
-      </div>
-      :
-      <div>
-        <img className='vanga-img vanga-img-anim-5' src={Vanga} alt="" />
-        <div className='hr'> </div>
-      </div>
-      
-      }
-
+      <img className={vangaImageClassName} src={Vanga} alt="" />
 
       <div className="quizz-intro">
         <div className='quiz-intro-txts'>
@@ -116,9 +84,13 @@ const Quiz = () => {
           }
           {
             quizState === 5 ? 
-            <QuizQuestions />
+            <QuizQuestions answers={setAnswers} quizState={setQuizState} />
             :
             null
+          }
+          {
+            quizState === 6 && 
+            <Answers />
           }
           
         </div>
