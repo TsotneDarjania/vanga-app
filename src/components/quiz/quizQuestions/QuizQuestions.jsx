@@ -74,7 +74,7 @@ const [birthDayIsSelected, setBirthDayIsSelected] = useState(false)
             <p className="question-txt">Is light a particle or a wave? </p>
             <button onClick={ ()=> {nextQuestion("particle")}} className="answer-btn"> particle </button>
             <button onClick={ ()=> {nextQuestion("wave")}} className="answer-btn"> wave </button>
-            <button onClick={ ()=> {nextQuestion("no_one")}} className="answer-btn"> no one </button>
+            <button onClick={ ()=> {nextQuestion("no one")}} className="answer-btn"> no one </button>
             <button onClick={ ()=> {nextQuestion("both")}} className="answer-btn"> both </button>
           </div>  
         } 
@@ -90,20 +90,19 @@ const [birthDayIsSelected, setBirthDayIsSelected] = useState(false)
         { questionIndex === 7 &&
           <div className="question-raw">
             <p className="question-txt">What will you do if you find out that an asteroid with a radius of 30 km will hit the earth tomorrow? </p>
-            <button onClick={ ()=> {nextQuestion("I_will_have_sex_all_day")}} className="answer-btn"> I will have sex all day </button>
-            <button onClick={ ()=> {nextQuestion("I_will_drink_all_day")}} className="answer-btn"> I will drink all day </button>
-            <button onClick={ ()=> {nextQuestion("I_will_have_fun_all_day")}} className="answer-btn"> I will have fun all day </button>
-            <button onClick={ ()=> {nextQuestion("all_three")}} className="answer-btn"> all three </button>
-            <button onClick={ ()=> {nextQuestion("other")}} className="answer-btn"> other </button>
+            <button onClick={ ()=> {nextQuestion("I will have sex all_day")}} className="answer-btn"> I will have sex all day </button>
+            <button onClick={ ()=> {nextQuestion("I will drink_all day")}} className="answer-btn"> I will drink all day </button>
+            <button onClick={ ()=> {nextQuestion("I will have fun all day")}} className="answer-btn"> I will have fun all day </button>
+            <button onClick={ ()=> {nextQuestion("i dont now")}} className="answer-btn"> i dont now </button>
           </div>  
         } 
         { questionIndex === 8 &&
           <div className="question-raw">
             <p className="question-txt">Coca-Cola or Pepsi?</p>
-            <button onClick={ ()=> {nextQuestion("coca_cola")}} className="answer-btn"> Coca-Cola </button>
+            <button onClick={ ()=> {nextQuestion("coca cola")}} className="answer-btn"> Coca-Cola </button>
             <button onClick={ ()=> {nextQuestion("pepsi")}} className="answer-btn">Pepsi</button>
             <button onClick={ ()=> {nextQuestion("water")}} className="answer-btn"> water </button>
-            <button onClick={ ()=> {nextQuestion("no_one")}} className="answer-btn"> no one </button>
+            <button onClick={ ()=> {nextQuestion("wine")}} className="answer-btn"> wine  </button>
           </div>  
         } 
         { questionIndex === 9 &&

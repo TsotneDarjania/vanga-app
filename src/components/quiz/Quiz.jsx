@@ -16,7 +16,7 @@ const Quiz = () => {
 
   const [quizState, setQuizState] = useState(0);
   const [quizClassName, setQuizClassName] = useState(null)
-  const [vangaImageClassName, setVangaImageClassName] = useState("vanga-image")
+  const [vangaImageClassName, setVangaImageClassName] = useState("vanga-img")
 
 
 
@@ -26,6 +26,9 @@ const Quiz = () => {
     }
     if(quizState === 5){
       setQuizClassName("quiz-2")
+    }
+    if(quizState === 6){
+      setQuizClassName("quiz-3")
     }
     
     
@@ -43,8 +46,15 @@ const Quiz = () => {
 
   return (
     <div className={'quiz ' + quizClassName}>
-      <img className={vangaImageClassName} src={Vanga} alt="" />
-
+      {
+        quizState < 5 ? <img className={vangaImageClassName} src={Vanga} alt="" />
+        :
+        <div>
+          <img className={vangaImageClassName} src={Vanga} alt="" />
+          <div className='hr'> </div>
+        </div>
+      }
+      
       <div className="quizz-intro">
         <div className='quiz-intro-txts'>
           { quizState === 1 ?    
@@ -90,7 +100,7 @@ const Quiz = () => {
           }
           {
             quizState === 6 && 
-            <Answers />
+            <Answers answers={answers} />
           }
           
         </div>

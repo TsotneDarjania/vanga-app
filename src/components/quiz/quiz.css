@@ -13,6 +13,10 @@
     transition: 5s;
     background-color: rgb(209, 194, 255);
 }
+.quiz-3{
+    transition: 5s;
+    background-color: rgb(10, 1, 24);
+}
 
 .vanga-img{
     position: relative;
@@ -47,6 +51,12 @@
     transition: 0.8s;
     transform: scale(0.6);
     filter: grayscale(50%) blur(0.4px);
+}
+.vanga-img-anim-6 {
+    margin-top: -50px;
+    transition: 0.8s;
+    transform: scale(0.66);
+    filter: grayscale(0%) blur(0px);
 }
 
 .hr{
