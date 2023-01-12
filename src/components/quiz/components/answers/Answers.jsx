@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useEffect } from 'react'
 import "./answers.css"
 
 const Answers = (props) => {
@@ -7,6 +6,7 @@ const Answers = (props) => {
 
   let [zodiac,setZodiac] = useState("")
   let [answerClass,setAnswerClass] = useState("")
+  let [answerStartClass,setAnswerStartClass] = useState("")
 
   getZodiac();
 
@@ -21,10 +21,13 @@ const Answers = (props) => {
 
   return (
     <div className='answers'>
-        <p className="answer-text answer-text-1"> well well well, 
-        now you will see way of your life, are you ready ?
-        </p>
-        <button onClick={() => { setAnswerClass("show") }} className="continue-answer-btn">of course</button>
+        <div className={'answers-start ' + answerStartClass}>
+          <p className="answer-text"> well well well, 
+          now you will see way of your life, are you ready ?
+          </p>
+          <button onClick={() => { setAnswerClass("show");setAnswerStartClass("hide") }} className="continue-answer-btn">of course</button>
+        </div>
+  
 
         <div className={"answers-container " + answerClass} >
           <div className="answer-container-text"> you are { zodiac }</div>

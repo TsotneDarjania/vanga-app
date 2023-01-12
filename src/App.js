@@ -6,15 +6,12 @@ import Quiz from './components/quiz/Quiz';
 
 function App() {
 
-  const [scenName, setScenName] = useState("quiz");
+  const [scenName, setScenName] = useState("intro");
 
   return (
     <div className="App">
-
       {scenName === "intro" && <Intro scenName={setScenName} /> }
-
       {scenName === "quiz" && <Quiz /> }
-
     </div>
   );
 }

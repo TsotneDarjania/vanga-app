@@ -6,13 +6,9 @@ import { useState } from 'react';
 
 
 const Intro = (props) => {
+
   const lastTextRef = useRef();
-
   const [startIsPossible, setStartIsPossible] = useState(false)
-
-
-
-
 
   useEffect(() => {
     lastTextRef.current.addEventListener('animationend', () => {  

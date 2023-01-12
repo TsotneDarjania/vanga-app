@@ -60,4 +60,16 @@
     background-color: black;
 }
 
+@media screen and (max-width:600px) {
+    .question-txt{
+        font-size: 1.4rem;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .answer-btn{
+        width: 250px;
+    }
+}
+
 

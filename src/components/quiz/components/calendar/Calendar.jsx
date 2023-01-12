@@ -1,9 +1,6 @@
 import React from 'react'
-import { useEffect } from 'react';
 import { useState } from 'react'
 import "./calendar.css"
-
-
 
 class Month {
     constructor(days_number){
@@ -59,7 +56,7 @@ const Calendar = (props) => {
 
     function selectDay(day){ 
 
-        if(selectedDay != undefined){
+        if(selectedDay !== undefined){
             document.getElementById(day).classList.remove('number-selected')
         }
         
@@ -79,8 +76,8 @@ const Calendar = (props) => {
         let content = [];
 
         for (let i = 0; i < month.days_number; i++) {
-            if(month.zodiacDays[i] != "none"){
-                if(selectedDay != undefined){
+            if(month.zodiacDays[i] !== "none"){
+                if(selectedDay !== undefined){
                     if(month.zodiacDays[i] + "_day_"+i === selectedDay ){
                         content.push(<div key={month.zodiacDays[i] + "_"+i} id={month.zodiacDays[i] + "_day_"+i} onClick={ () => {selectDay(month.zodiacDays[i] + "_day_"+i)}} className={"calendar-number "+month.zodiacDays[i] + " number-selected"}> {<p> {i+1} </p>} </div>);
                     }

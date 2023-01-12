@@ -5,8 +5,8 @@ import Arrow from '../../img/arrow.png'
 import {useRef,useEffect, useState } from 'react';
 
 import "./quiz.css";
-import QuizQuestions from './quizQuestions/QuizQuestions';
-import Answers from './answers/Answers';
+import QuizQuestions from './components/quizQuestions/QuizQuestions';
+import Answers from './components/answers/Answers';
 
 
 const Quiz = () => {
@@ -41,7 +41,7 @@ const Quiz = () => {
     }
 
     setVangaImageClassName("vanga-img vanga-img-anim-"+quizState);
-  })
+  }, [quizState])
 
 
   return (

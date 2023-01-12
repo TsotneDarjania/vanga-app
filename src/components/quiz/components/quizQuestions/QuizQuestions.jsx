@@ -1,6 +1,6 @@
 import "./quizQuestions.css"
 import { useState } from "react"
-import Calendar from "../components/Calendar"
+import Calendar from "../calendar/Calendar"
 
 
 import React from 'react'

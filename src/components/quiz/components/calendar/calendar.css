@@ -47,48 +47,50 @@
     font-size: 2rem;
 }
 
-.month-next-btn{
-
-}
-
 .capricorn {
-    background-image: url("../../../img/zodiacIcons/capricorn.png");
+    background-image: url("../../../../img/zodiacIcons/capricorn.png");
 }
 .aquarius {
-    background-image: url("../../../img/zodiacIcons/aquarius.png");
+    background-image: url("../../../../img/zodiacIcons/aquarius.png");
 }
 .pisces {
-    background-image: url("../../../img/zodiacIcons/pisces.png");
+    background-image: url("../../../../img/zodiacIcons/pisces.png");
 }
 .aries {
-    background-image: url("../../../img/zodiacIcons/aries.png");
+    background-image: url("../../../../img/zodiacIcons/aries.png");
 }
 .taurus {
-    background-image: url("../../../img/zodiacIcons/taurus.png");
+    background-image: url("../../../../img/zodiacIcons/taurus.png");
 }
 .gemini {
-    background-image: url("../../../img/zodiacIcons/gemini.png");
+    background-image: url("../../../../img/zodiacIcons/gemini.png");
 }
 .cancer {
-    background-image: url("../../../img/zodiacIcons/cancer.png");
+    background-image: url("../../../../img/zodiacIcons/cancer.png");
 }
 .leo {
-    background-image: url("../../../img/zodiacIcons/leo.png");
+    background-image: url("../../../../img/zodiacIcons/leo.png");
 }
 .virgo {
-    background-image: url("../../../img/zodiacIcons/virgo.png");
+    background-image: url("../../../../img/zodiacIcons/virgo.png");
 }
 .libra {
-    background-image: url("../../../img/zodiacIcons/libra.png");
+    background-image: url("../../../../img/zodiacIcons/libra.png");
 }
 .scorpio {
-    background-image: url("../../../img/zodiacIcons/scorpio.png");
+    background-image: url("../../../../img/zodiacIcons/scorpio.png");
 }
 .sagittarius {
-    background-image: url("../../../img/zodiacIcons/sagittarius.png");
+    background-image: url("../../../../img/zodiacIcons/sagittarius.png");
 }
 
 .number-selected{
     background-color: rgba(203, 158, 255, 0.963);
     color: white;
+}
+
+@media screen and (max-width:600px) {
+    #calendar{
+        width: 300px;
+    }
 }

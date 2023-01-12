@@ -81,10 +81,6 @@
     }
 }
 
-.quiz-intro-txts{
- 
-}
-
 .quiz-intro-continue-txt{
     color: white;
 }
@@ -232,6 +228,22 @@
             transform: scale(0);
         }
     }
+    .vanga-img{
+        width: 300px;
+    }
 
+}
+
+
+@media screen and (max-width:600px) {
+    .vanga-img{
+        width: 250px;
+    }
+
+    .quizz-intro-next-btn{
+        padding: 6px;
+        width: 200px;
+        font-size: 1.9rem;
+    }
 }
 
