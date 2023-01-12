@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/vanga-app/static/css/main.82d60353.css",
+    "main.js": "/vanga-app/static/js/main.7e141d43.js",
+    "static/media/introBackground.jpg": "/vanga-app/static/media/introBackground.6e6d767b30d440859359.jpg",
+    "static/media/future_telling_women.png": "/vanga-app/static/media/future_telling_women.35d0beb352ce363245fb.png",
+    "static/media/virgo.png": "/vanga-app/static/media/virgo.425365f5c8103fd69b86.png",
+    "static/media/aquarius.png": "/vanga-app/static/media/aquarius.1a29f675555b25017808.png",
+    "static/media/cancer.png": "/vanga-app/static/media/cancer.c9a86442159fb9046c4b.png",
+    "static/media/capricorn.png": "/vanga-app/static/media/capricorn.8abb0de2a373d6726913.png",
+    "static/media/leo.png": "/vanga-app/static/media/leo.2d3cd4585ab2e89c3fda.png",
+    "static/media/arrow.png": "/vanga-app/static/media/arrow.7fae7e1d5ad7f1ee51c9.png",
+    "static/media/aries.png": "/vanga-app/static/media/aries.7e01fcaeb149bd82bf73.png",
+    "static/media/scorpio.png": "/vanga-app/static/media/scorpio.3903bbcd1dd6fa6b3b98.png",
+    "static/media/libra.png": "/vanga-app/static/media/libra.62c4604805518f2cdc5f.png",
+    "index.html": "/vanga-app/index.html",
+    "main.82d60353.css.map": "/vanga-app/static/css/main.82d60353.css.map",
+    "main.7e141d43.js.map": "/vanga-app/static/js/main.7e141d43.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82d60353.css",
+    "static/js/main.7e141d43.js"
+  ]
+}
